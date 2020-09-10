@@ -44,12 +44,10 @@ function validationForm() {
 
         inputs.forEach( function (e) { 
             e.style.border = '1px solid #D3E7F9';
-            
             if (e.value === '') {
                 e.style.border = '1px solid red';
             } else {
                 e.style.border = '1px solid green';
-                btnReg.innerText = 'Done';
             }
          })
 
