@@ -1,8 +1,8 @@
 function visiblePopup() { 
 
     const popup = document.querySelector('.popup'); //Оболочка фона окон
-    const openBtn = document.querySelector('btn-open-reg'); //Кнопка открытия
-    const nameModal = document.querySelector('modal-registration'); //Модальное окно
+    const openBtn = document.querySelector('.btn-open-reg'); //Кнопка открытия
+    const nameModal = document.querySelector('.modal-registration'); //Модальное окно
     const closeBtn = document.querySelector('.modal-close'); //Кнопка закрытия окна
     const regBtn = document.querySelector('.btn-reg'); //Кнопка формаы отправления данных
 
