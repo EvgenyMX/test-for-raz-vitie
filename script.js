@@ -1,15 +1,17 @@
 function visiblePopup() { 
-
     const popup = document.querySelector('.popup'); //Оболочка фона окон
     const openBtn = document.querySelector('.btn-open-reg'); //Кнопка открытия
     const nameModal = document.querySelector('.modal-registration'); //Модальное окно
     const closeBtn = document.querySelector('.modal-close'); //Кнопка закрытия окна
-    const regBtn = document.querySelector('.btn-reg'); //Кнопка формаы отправления данных
 
     //Открыть модальное окно по кнопке
     openBtn.addEventListener('click', () => {
         popup.style.display = "flex";
         nameModal.style.display = "flex";
+        // nameModal.style.top = "100%";
+
+
+
     });
 
     //Закрытие модального окна по кнопке "крестик" и при клике вне области окна
@@ -28,11 +30,47 @@ function visiblePopup() {
             });
         }
     });
-    //Запретить переход на станицу обработчика формы
-    regBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-    })
-}
 
+}
 visiblePopup('.btn-open-reg','.modal-registration');
 
+function validationForm() { 
+    const name = document.querySelector('#name'),
+        email = document.querySelector('#email'),
+        phone = document.querySelector('#phone'),
+        btnReg = document.querySelector('.btn-reg');//Кнопка формы отправления данных
+
+    //Запретить переход на станицу обработчика формы
+    btnReg.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        if ( name.value === '' ) {
+            name.style = 'border: 1px solid red';
+        } else if (name.value > 0)  {
+            name.style = 'border: 1px solid #D3E7F9';
+        }
+
+        
+        if ( email.value === '' ) {
+            email.style = 'border: 1px solid red';
+        } else if (email.value > 0)  {
+            email.style = 'border: 1px solid #D3E7F9';
+        }
+
+
+        if ( phone.value === '' ) {
+            phone.style = 'border: 1px solid red';
+        } else if (phone.value > 0)  {
+            phone.style = 'border: 1px solid #D3E7F9';
+        }
+
+
+
+        // email.style = 'border: 1px solid #D3E7F9';
+        // modal-form input
+
+    })
+
+
+}
+validationForm();
