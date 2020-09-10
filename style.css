@@ -27,7 +27,6 @@ body {
     margin: 100px auto;
     max-width: 1190px;
     padding: 0 20px;
-    outline: 1px solid;
 }
 .main-title {
     margin-right: auto;
@@ -38,6 +37,11 @@ body {
 }
 .btn {
     cursor: pointer;
+    transition: all .5s ease-out;
+}
+.btn:hover {
+    cursor: pointer;
+    
 }
 .main-btn {
     flex: none;
@@ -58,24 +62,23 @@ body {
 /* Popup Window */
 .popup {
     position: relative;
-    display: none;
-    /* display: flex; */
+    /* display: none; */
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    /* justify-content: center; 
-    align-items: center; */
     background: rgba(0, 0, 0, 0.8);
 }
 .modal-registration {
-    position: relative;
-    /* top: -100%;
+    position: absolute;
+    /* top: -100%; */
+    top: 10%;
     left: 50%;
-    transform: translateX(-50%); */
-    display: none;
-    /* display: flex; */
+    transform: translateX(-50%); 
+    /* display: none; */
+    display: flex;
     flex-direction: column;
     padding: 30px 24px;
     width: 375px;
@@ -153,17 +156,21 @@ body {
 
 
 /* MEDIA */
-@media ( min-width: 826px ) and ( max-width: 989px ) {
+@media  ( max-width: 989px ) {
     .main-title {
         font-size: 70px;
     }
+    .modal-registration {
+        top: 0%;
+        padding: 20px 24px;
+    }
 }
-@media ( min-width: 770px ) and ( max-width: 825px ) {
+@media  ( max-width: 825px ) {
     .main-title {
         font-size: 62px;
     }
 }
-@media ( min-width: 586px ) and ( max-width: 769px ) {
+@media  ( max-width: 772px ) {
     .main-title {
         font-size: 45px;
     }
@@ -172,10 +179,11 @@ body {
         font-size: 22px;
     }
 }
-@media ( min-width: 320px ) and ( max-width: 585px ) {
+@media  ( max-width: 585px ) {
     .content {
         flex-direction: column;
     }
+
     .main-title {
         padding-right: 0;
         font-size: 45px;
