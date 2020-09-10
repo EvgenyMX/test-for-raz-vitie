@@ -8,10 +8,6 @@ function visiblePopup() {
     openBtn.addEventListener('click', () => {
         popup.style.display = "flex";
         nameModal.style.display = "flex";
-        // nameModal.style.top = "100%";
-
-
-
     });
 
     //Закрытие модального окна по кнопке "крестик" и при клике вне области окна
