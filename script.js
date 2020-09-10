@@ -17,53 +17,41 @@ function visiblePopup() {
         if ( e.target.classList.contains('popup') ) {
             popup.style.display = "none";
             nameModal.style.display = "none";
+            document.querySelector('.modal-form').reset();//очистка формы
         } 
         // Иначе закрыть окно можно только по клику в кнопку
         else {
             closeBtn.addEventListener('click', () => {
                 popup.style.display = "none";
                 nameModal.style.display = "none";
+                document.querySelector('.modal-form').reset();
             });
         }
     });
 
 }
-visiblePopup('.btn-open-reg','.modal-registration');
+visiblePopup();
 
 function validationForm() { 
     const name = document.querySelector('#name'),
         email = document.querySelector('#email'),
         phone = document.querySelector('#phone'),
-        btnReg = document.querySelector('.btn-reg');//Кнопка формы отправления данных
+        inputs = document.querySelectorAll('.input-form'),
+        btnReg = document.querySelector('.btn-reg');
 
-    //Запретить переход на станицу обработчика формы
     btnReg.addEventListener('click', (e) => {
         e.preventDefault();
 
-        if ( name.value === '' ) {
-            name.style = 'border: 1px solid red';
-        } else if (name.value > 0)  {
-            name.style = 'border: 1px solid #D3E7F9';
-        }
-
-        
-        if ( email.value === '' ) {
-            email.style = 'border: 1px solid red';
-        } else if (email.value > 0)  {
-            email.style = 'border: 1px solid #D3E7F9';
-        }
-
-
-        if ( phone.value === '' ) {
-            phone.style = 'border: 1px solid red';
-        } else if (phone.value > 0)  {
-            phone.style = 'border: 1px solid #D3E7F9';
-        }
-
-
-
-        // email.style = 'border: 1px solid #D3E7F9';
-        // modal-form input
+        inputs.forEach( function (e) { 
+            e.style.border = '1px solid #D3E7F9';
+            
+            if (e.value === '') {
+                e.style.border = '1px solid red';
+            } else {
+                e.style.border = '1px solid green';
+                btnReg.innerText = 'Done';
+            }
+         })
 
     })
 
