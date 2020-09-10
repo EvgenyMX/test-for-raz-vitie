@@ -171,11 +171,7 @@ body {
         padding: 20px 24px;
     }
 }
-@media  ( max-width: 825px ) {
-    .main-title {
-        font-size: 54px;
-    }
-}
+
 @media  ( max-width: 772px ) {
     .main-title {
         font-size: 54px;
